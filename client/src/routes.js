@@ -8,6 +8,7 @@ import EventsContainer from './containers/EventsContainer';
 import EventContainer from './containers/EventContainer';
 import Terms from './components/Terms';
 import OrganizerProfile from './components/OrganizerProfile';
+import MusicianProfile from './components/MusicianProfile';
 
 const routes = (
   <Route path="/" component={App}>
@@ -18,6 +19,7 @@ const routes = (
     <Route path="/organizerProfile" component={OrganizerProfile} />
     <Route path="/events" component={EventsContainer} />
     <Route path="/event/:id" component={EventContainer} />
+    <Route path="/musicianProfile" component={MusicianProfile} />
 
     <Route path="/terms" component={Terms} />
   </Route>
