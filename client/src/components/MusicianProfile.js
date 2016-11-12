@@ -55,7 +55,6 @@ class MusicanProfile extends React.Component {
                     <input type="text" onChange={this.handleMusicianDegreeChange} required />
                   </label>
                 </div>
-                
                 <div className="small-12 medium-5 columns">
                   <label>Major:
                     <input type="text" onChange={this.handleMusicianMajorChange} required />
@@ -105,7 +104,7 @@ class MusicanProfile extends React.Component {
               <label htmlFor="isWorldMusic"><input type="checkbox" name="isWorldMusic" onChange={this.handleIsWorldMusicChange} value="worldMusic" id="isWorldMusic" />World Music</label>
               <label htmlFor="isOthersGenre"><input type="checkbox" name="isOthersGenre" onChange={this.handleIsOthersGenreChange} value="othersGenre" id="isOthersGenre" />Others</label>
             </div>
-           
+
             <div className="small-12 columns">
               <label>Why Do you want to volunteer:</label>
               <label htmlFor="isShareMusic"><input type="checkbox" name="isShareMusic" onChange={this.handleIsShareMusicChange} value="shareMusic" id="isShareMusic" />Share music</label>
@@ -115,7 +114,7 @@ class MusicanProfile extends React.Component {
               <label htmlFor="isCurious"><input type="checkbox" name="isCurious" onChange={this.handleIsCuriousChange} value="curious" id="isCurious" />Curious about the organization</label>
               <label htmlFor="isOtherReason"><input type="checkbox" name="isOtherReason" onChange={this.handleIsOtherReasonChange} value="otherReason" id="isOtherReason" />Other</label>
             </div>
-      
+
             <div className="small-12 columns">
               <label>Video or Audio file link:</label>
               <div className="input-group">
@@ -125,12 +124,12 @@ class MusicanProfile extends React.Component {
                 </div>
               </div>
             </div>
-            
+
             <div className="small-8 columns">
               <label>Profile:</label>
               <textarea onChange={this.handleIsProfile} />
             </div>
-         
+
             <div className="small-12 medium-12 columns">
               <button type="submit" className="button">Save Changes</button>
             </div>
