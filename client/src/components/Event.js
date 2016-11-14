@@ -21,10 +21,6 @@ class Event extends React.Component {
     isRegistered: PropTypes.bool
   }
 
-  static defaultProps = {
-    event: {}
-  }
-
   componentWillMount() {
     this.props.loadEvent(this.props.params.id, `?filter=${JSON.stringify({
       include: 'volunteers'
@@ -56,7 +52,7 @@ class Event extends React.Component {
   }
 
   render() {
-    const { date, endDate, name, location } = this.props.event;
+    const { date, endDate, name, location } = this.props.event || {};
     if (this.props.isFetching) {
       return <p> Loading ... </p>;
     }

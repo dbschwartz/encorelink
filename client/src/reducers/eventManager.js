@@ -3,8 +3,7 @@ import {
   LOAD_EVENTS_REQUEST,
   LOAD_EVENTS_SUCCESS,
   LOAD_EVENT_SUCCESS,
-  SIGNUP_FOR_EVENT_SUCCESS,
-  LOGOUT
+  SIGNUP_FOR_EVENT_SUCCESS
 } from '../constants/reduxConstants';
 
 const initialState = {
@@ -51,8 +50,6 @@ const eventManager = (state = initialState, action) => {
           volunteers: [...state.event.volunteers, action.payload]
         }
       };
-    case LOGOUT:
-      return initialState;
     default:
       return state;
   }
