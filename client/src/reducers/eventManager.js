@@ -3,11 +3,20 @@ import {
   LOAD_EVENTS_REQUEST,
   LOAD_EVENTS_SUCCESS,
   LOAD_EVENT_SUCCESS,
+  SIGNUP_FOR_EVENT_SUCCESS,
   LOGOUT
 } from '../constants/reduxConstants';
 
 const initialState = {
-  isFetching: false
+  isFetching: true,
+  event: {
+    date: '',
+    endDate: '',
+    id: 0,
+    location: '',
+    name: '',
+    volunteers: []
+  }
 };
 
 const eventManager = (state = initialState, action) => {
@@ -33,6 +42,14 @@ const eventManager = (state = initialState, action) => {
         ...state,
         event: action.payload,
         isFetching: false
+      };
+    case SIGNUP_FOR_EVENT_SUCCESS:
+      return {
+        ...state,
+        event: {
+          ...state.event,
+          volunteers: [...state.event.volunteers, action.payload]
+        }
       };
     case LOGOUT:
       return initialState;

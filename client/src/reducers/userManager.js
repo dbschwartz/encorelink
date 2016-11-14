@@ -69,3 +69,11 @@ export function getUserToken(state) { return state.userManager.userToken; }
 export function isLoggedInUserAMusician(state) {
   return state.userManager.user.isMusician;
 }
+
+export function isLoggedInUserRegistered(state) {
+  const registered = state.eventManager.event.volunteers.findIndex((item) => {
+    return item.id === state.userManager.userId;
+  });
+
+  return registered > -1;
+}

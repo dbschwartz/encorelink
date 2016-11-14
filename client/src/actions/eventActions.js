@@ -21,7 +21,7 @@ export function signUpForEvent(event) { // eslint-disable-line import/prefer-def
     }),
 
     startAction: () => signUpForEventStart(),
-    successAction: (res) => signUpForEventSuccess(res),
+    successAction: (res, state) => signUpForEventSuccess(state.userManager.user),
     failAction: (error) => signUpForEventFailure(error)
   });
 }

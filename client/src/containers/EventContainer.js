@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { loadEvent } from '../actions';
-import { isLoggedInUserAMusician } from '../reducers/userManager';
+import { isLoggedInUserAMusician, isLoggedInUserRegistered } from '../reducers/userManager';
 import { signUpForEvent } from '../actions/eventActions';
 
 import Event from '../components/Event';
@@ -9,7 +9,8 @@ const mapStateToProps = (state) => {
   return {
     isFetching: state.eventManager.isFetching,
     isMusician: isLoggedInUserAMusician(state),
-    event: state.eventManager.event
+    event: state.eventManager.event,
+    isRegistered: isLoggedInUserRegistered(state)
   };
 };
 

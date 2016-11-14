@@ -103,9 +103,9 @@ const loadEventsFail = createErrorAction(LOAD_EVENTS_FAILURE);
 const loadEventsSuccess = createAction(LOAD_EVENTS_SUCCESS);
 const loadEventSuccess = createAction(LOAD_EVENT_SUCCESS);
 
-export function loadEvents(id) {
+export function loadEvents(id, query = '') {
   return createApiAction({
-    callApi: () => callApi(`/api/events${id ? `/${id}` : ''}`),
+    callApi: () => callApi(`/api/events${id ? `/${id}` : ''}${query}`),
 
     startAction: () => startGetVolunteerEvents(),
     successAction: (res) => {
@@ -115,8 +115,8 @@ export function loadEvents(id) {
   });
 }
 
-export function loadEvent(id) {
-  return loadEvents(id);
+export function loadEvent(id, query = '') {
+  return loadEvents(id, query);
 }
 
 const startRegisterRequest = createAction(REGISTER_REQUEST);
