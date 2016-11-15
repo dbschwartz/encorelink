@@ -1,3 +1,4 @@
+import { browserHistory } from 'react-router';
 import { createApiAction, createAction, createErrorAction } from '../utils/reduxActions';
 import { put } from '../utils/apiHelpers';
 import { getUserId } from '../reducers/userManager';
@@ -20,7 +21,10 @@ export function signUpForEvent(event) { // eslint-disable-line import/prefer-def
     }),
 
     startAction: () => signUpForEventStart(),
-    successAction: (res, state) => signUpForEventSuccess(state.userManager.user),
+    successAction: (res, state) => {
+      browserHistory.push('/events');
+      return signUpForEventSuccess(state.userManager.user);
+    },
     failAction: (error) => signUpForEventFailure(error)
   });
 }
