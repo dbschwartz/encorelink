@@ -9,8 +9,7 @@ class Event extends React.Component {
       endDate: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
       location: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      volunteers: PropTypes.array.isRequired
+      name: PropTypes.string.isRequired
     }),
     isMusician: PropTypes.bool.isRequired,
     params: PropTypes.shape({
@@ -29,7 +28,6 @@ class Event extends React.Component {
 
   displayMusicianOptions() {
     const { isMusician, isRegistered } = this.props;
-    const { volunteers = [] } = this.props.event;
 
     if (isRegistered) {
       return (
@@ -37,7 +35,7 @@ class Event extends React.Component {
       );
     }
 
-    if (!isMusician || volunteers.length) {
+    if (!isMusician) {
       return undefined;
     }
 
