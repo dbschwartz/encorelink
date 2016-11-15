@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { getFormattedDayAndTime } from '../utils/dateFormatting';
 
 class Event extends React.Component {
@@ -62,6 +63,10 @@ class Event extends React.Component {
         <h4>{ day } | { time }</h4>
         { location }
         { this.displayMusicianOptions() }
+        <br />
+        <br />
+        <br />
+        <Link to="/events">Back to Events</Link>
       </div>
     );
   }
